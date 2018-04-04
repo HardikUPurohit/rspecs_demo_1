@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe PostsController, :type => :controller do
+describe PostsController, type: :controller do
   context "index, create, show" do
     it "has a 200 status code" do
       get :index

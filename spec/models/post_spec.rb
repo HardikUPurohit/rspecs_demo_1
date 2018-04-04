@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Post, :type => :model do
+describe Post, type: :model do
   context "Post Create" do
 
     it "return true when record created" do
