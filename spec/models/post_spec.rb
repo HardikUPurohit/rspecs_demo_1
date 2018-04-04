@@ -1,14 +1,19 @@
 require 'rails_helper'
 
 describe Post, type: :model do
-  context "Post Create" do
-
-    it "return true when record created" do
-      post_count = Post.count
-      post = Post.create(name: 'hardik', title: 'abcdefghi', content: 'abcdefghi')
-      expect(Post.count).to eq( post_count + 1)
+  describe 'create post' do
+    context 'valid attributes' do
+      it "return true when post count increases" do
+        post_count = Post.count
+        post = Post.create(name: 'hardik', title: 'abcdefghi', content: 'abcdefghi')
+        expect(Post.count).to eq( post_count + 1)
+      end
+      it 'return treu when record inserted' do
+        expect(post('abc', 'abcdefghi', 'abcdefghi')).to be_valid
+      end
     end
 
+    context "invalid attributes" do
     it "when name is not inserted" do
       post = Post.create(title: 'hii', content: 'hello')
       expect(Post.count).to eq(0)
@@ -28,13 +33,10 @@ describe Post, type: :model do
       expect(post(nil)).to_not be_valid
     end
 
-    it 'is valid with valid attributes' do
-      expect(post('abc', 'abcdefghi', 'abcdefghi')).to be_valid
-    end
-
     it 'title length that should be >= 5' do
       expect(post('abc', 'abc', 'abcdefghi')).to_not be_valid
     end
+  end
   end
 end
 
