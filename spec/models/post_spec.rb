@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 describe Post, type: :model do
+  before :each do
+    Post.delete_all
+  end
+  
   describe 'create post' do
     context 'valid attributes' do
       it "return true when post count increases" do
