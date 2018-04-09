@@ -8,7 +8,7 @@ describe 'posts/show' do
   it 'check the name' do
     render 'posts/post', post: @post
 
-    expect(rendered).to match /abc/
+    expect(rendered).to match /hardik/
   end
 
   it 'displays first record' do

@@ -9,9 +9,9 @@ describe "Post Management", type: :feature do
     scenario "valid attibutes" do
       visit 'posts/new'
 
-      fill_in "Name", with: 'asdasd'
-      fill_in "Title", with: 'asdasdasdsadasdsad'
-      fill_in "Content", with: 'asdasdasdasdsadsadasdassad'
+      fill_in "Name", with: 'Hardik'
+      fill_in "Title", with: 'BTPL - RUBY'
+      fill_in "Content", with: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,'
 
       click_button "Create Post"
       expect(page).to have_text("Post was successfully created.")
@@ -19,8 +19,8 @@ describe "Post Management", type: :feature do
 
     scenario "invalid attributes" do
       visit 'posts/new'
-      fill_in "Title", with: 'asdasdasdsadasdsad'
-      fill_in "Content", with: 'asdasdasdasdsadsadasdassad'
+      fill_in "Title", with: 'BTPL - RUBY'
+      fill_in "Content", with: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,'
 
       click_button "Create Post"
       expect(page).to have_text("Name can't be blank")
@@ -36,9 +36,9 @@ describe "Post Management", type: :feature do
     scenario 'valid attributes' do
       visit "/posts/#{@post.id}/edit"
 
-      fill_in "Name", with: 'asdasd'
-      fill_in "Title", with: 'asdasdasdsadasdsad'
-      fill_in "Content", with: 'asdasdasdasdsadsadasdassad'
+      fill_in "Name", with: 'Hardik'
+      fill_in "Title", with: 'BTPL - RUBY'
+      fill_in "Content", with: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,'
 
       click_button "Update Post"
       expect(page).to have_text("Post was successfully updated.")
@@ -48,8 +48,8 @@ describe "Post Management", type: :feature do
       visit "/posts/#{@post.id}/edit"
 
       fill_in "Name", with: ""
-      fill_in "Title", with: 'asdasdasdsadasdsad'
-      fill_in "Content", with: 'asdasdasdasdsadsadasdassad'
+      fill_in "Title", with: 'BTPL - RUBY'
+      fill_in "Content", with: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,'
 
       click_button "Update Post"
       expect(page).to have_text("Name can't be blank")
